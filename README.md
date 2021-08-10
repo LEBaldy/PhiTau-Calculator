@@ -12,6 +12,17 @@ The calculator and linked google sheets was made by [LE⭐Baldy](https://github.
 
 This code will not work locally without the nessasary .json file, but for security reasons, it will not be publically made available. However, the code will be hosted shortly on the [Exponential Idle Discord](https://discord.gg/S9UheTC) for use. If you want usage without going through the bot you can message me for me to run it locally.
 
+Also requires the following packages:
+```
+pip3 install gspread
+pip3 install --upgrade google-api-python-client oauth2client 
+
+or
+
+pip install gspread
+pip install --upgrade google-api-python-client oauth2client 
+```
+
 ###   License
 
 These are the licenses for this calculator:
