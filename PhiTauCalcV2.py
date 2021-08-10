@@ -11,7 +11,6 @@ private_key=os.environ.get('private_key')
 Input= {"type": os.environ.get('type'),"project_id": os.environ.get('project_id'),"private_key_id":  os.environ.get('private_key_id'),"private_key":  private_key.replace('\\n','\n'),"client_email":  os.environ.get('client_email'),"client_id":  os.environ.get('client_id'),"auth_uri":  os.environ.get('auth_uri'),"token_uri":  os.environ.get('token_uri'),"auth_provider_x509_cert_url":  os.environ.get('auth_provider_x509_cert_url'),"client_x509_cert_url":  os.environ.get('client_x509_cert_url')}
 with open("Encryption_Key.json", 'w') as fp:
     json.dump(Input, fp)
-    #Encryption_Key = json.load(fp)
 with open("Encryption_Key.json", "r") as fp:
     Encryption_Key = json.load(fp)
 
@@ -69,3 +68,7 @@ elif(Ft>UpperLimit): print("F(t) is outside the range of equations.\nIf you have
 elif(output[2]==False): print("Estimated Phi for this F(t) is: ",output[0],"e", output[1]) #2k to 5k check
 elif(output[4]==1): print("Estimated Phi*Tau for this F(t) is: ", output[0],"e", output[1],"\nEstimated Tau for this F(t) is: ", output[2],"e", output[3],"\nEstimated Phi for this F(t) is: ", output[4]) #Phi=1 check
 else: print("Estimated Phi*Tau for this F(t) is: ", output[0],"e", output[1],"\nEstimated Tau for this F(t) is: ", output[2],"e", output[3],"\nEstimated Phi for this F(t) is: ", output[4],"e", output[5]) #normal output
+
+Reset = {'type': '', 'project_id': '', 'private_key_id': '', 'private_key': '', 'client_email': '', 'client_id': '', 'auth_uri': '', 'token_uri': '', 'auth_provider_x509_cert_url': '', 'client_x509_cert_url': ''}
+with open("Encryption_Key.json", 'w') as fp:
+    json.dump(Reset, fp)
