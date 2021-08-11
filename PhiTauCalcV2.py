@@ -14,7 +14,6 @@ with open("Encryption_Key.json", 'w') as fp:
 with open("Encryption_Key.json", "r") as fp:
     Encryption_Key = json.load(fp)
 
-
 #Sheet Setup
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds = ServiceAccountCredentials.from_json_keyfile_name('Encryption_Key.json', scope)
