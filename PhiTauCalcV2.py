@@ -6,6 +6,15 @@ import math
 import sys
 import time
 
+#Getting input
+Ft="hi"
+while type(Ft)==str:
+  Ft=input("What F(t) are you looking up for?\n(only number after ee or log10(log10(F(t))))\n")
+  if(Ft.isdigit()): Ft=int(Ft)
+  else: 
+    print("Please input an integer for F(t).")
+    Ft="Fail"
+    
 #Encryption Key BS
 private_key=os.environ.get('private_key')
 Input= {"type": os.environ.get('type'),"project_id": os.environ.get('project_id'),"private_key_id":  os.environ.get('private_key_id'),"private_key":  private_key.replace('\\n','\n'),"client_email":  os.environ.get('client_email'),"client_id":  os.environ.get('client_id'),"auth_uri":  os.environ.get('auth_uri'),"token_uri":  os.environ.get('token_uri'),"auth_provider_x509_cert_url":  os.environ.get('auth_provider_x509_cert_url'),"client_x509_cert_url":  os.environ.get('client_x509_cert_url')}
@@ -20,15 +29,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('Encryption_Key.json', 
 client = gspread.authorize(creds)
 sheet = client.open('Exponential Idle Average Phi (Created by Baldy)')
 Equations_of_Doom, Other_Data = sheet.get_worksheet(7), sheet.get_worksheet(8)
-
-#Getting input
-Ft="hi"
-while type(Ft)==str:
-  Ft=input("What F(t) are you looking up for?\n(only number after ee or log10(log10(F(t))))\n")
-  if(Ft.isdigit()): Ft=int(Ft)
-  else: 
-    print("Please input an integer for F(t).")
-    Ft="Fail"
 
 def FtSection():
     if(Ft>5000):
