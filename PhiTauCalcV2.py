@@ -23,10 +23,13 @@ sheet = client.open('Exponential Idle Average Phi (Created by Baldy)')
 Equations_of_Doom, Other_Data = sheet.get_worksheet(7), sheet.get_worksheet(8)
 
 #Getting input
-Ft=input("What F(t) are you looking up for?\n(only number after ee or log10(log10(F(t))))\n")
-#Integer check
-if(Ft.isdigit()): Ft=int(Ft)
-else: sys.exit('Please input a number for F(t).')
+Ft="hi"
+while type(Ft)==str:
+  Ft=input("What F(t) are you looking up for?\n(only number after ee or log10(log10(F(t))))\n")
+  if(Ft.isdigit()): Ft=int(Ft)
+  else: 
+    print("Please input an integer for F(t).")
+    Ft="Fail"
 
 def FtSection():
     if(Ft>5000):
